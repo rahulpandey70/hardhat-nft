@@ -53,7 +53,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         subscriptionId = networkConfig[chainId].subscriptionId
     }
 
-    log("----------------------------------------------------")
     arguments = [
         vrfCoordinatorV2Address,
         subscriptionId,
@@ -78,6 +77,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log("Verifying...")
         await verify(randomIpfsNft.address, arguments)
     }
+    log("---------------------------------------------")
 }
 
 async function handleTokenUris() {
